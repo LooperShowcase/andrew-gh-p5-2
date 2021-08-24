@@ -32,6 +32,10 @@ function draw() {
   let HrAngle = map(hr % 12, 0, 12, 0, 360);
   arc(0, 0, 250, 250, 0, HrAngle);
 
+
+  if(min < 10)
+    min = "0"+min
+    
   rotate(90);
   stroke("white");
   strokeWeight(1);
@@ -41,15 +45,16 @@ function draw() {
 
   stroke("white");
   fill("white");
-  text("Current date: \n" + d + "/" + M + "/" + y, -85, 300);
+  textSize(30);
+  text(d + "/" + M + "/" + y, -64, 45);
 
   push();
   noFill();
   stroke("#00a896");
   strokeWeight(4);
-  rect(300, 250, 90, 90);
+  rect(300, -30, 70, 70);
   fill("white");
   strokeWeight(1);
-  text(sec, 330, 280, 0);
+  text(sec, 319, -8, 0);
   pop();
 }
